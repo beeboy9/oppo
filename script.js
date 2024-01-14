@@ -132,3 +132,28 @@ function initButtons() {
 
 initButtons();
 load();
+ });
+function setReminder(eventDate, eventName) {
+  
+  var reminderTime = new Date(eventDate.getTime() - 30 * 60000);
+
+  
+  var reminderTimeString = reminderTime.toISOString();
+
+  
+  var notificationMessage = 'ระบบแจ้งเตือน: ' + eventName;
+
+  
+  if (Notification.permission === 'granted') {
+    
+    new Notification(notificationMessage);
+  } else if (Notification.permission !== 'denied') {
+    
+    Notification.requestPermission().then(function(permission) {
+      if (permission === 'granted') {
+        
+        new Notification(notificationMessage);
+      }
+    });
+  }
+}
