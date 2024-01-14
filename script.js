@@ -131,5 +131,4 @@ function initButtons() {
 }
 
 initButtons();
-load();
- });
+load();s
