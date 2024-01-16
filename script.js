@@ -135,24 +135,5 @@ function initButtons() {
 initButtons();
 
 
-const targetDate = new Date('2024-01-15T12:00:00');
-const location = 'สถานที่ตั้ง';
-
-function setReminder() {
-  const currentDate = new Date();
-
-  const timeDiff = targetDate - currentDate;
-  if (timeDiff > 0) {
-    setTimeout(() => {
-      alert(`ได้เวลาแจ้งเตือน! วันที่ ${targetDate.toLocaleDateString()} เวลา ${targetDate.toLocaleTimeString()} ที่ ${location}`);
-    }, timeDiff);
-  } else {
-    console.log('เวลาที่กำหนดไว้ผ่านไปแล้ว');
-  }
-}
-
-setReminder();
-
-
 initButtons();
 load();s
